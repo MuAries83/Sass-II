@@ -1,0 +1,64 @@
+@import "variables.scss";
+@mixin fuente($forma, $estilo) {
+    font-style: $estilo;
+    font-family: $forma;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: $colorBarras;
+    a {
+        text-decoration: none;
+        color:$colorFuente;
+        font-size: 25px;
+        font-family: $familiaFuente;
+        opacity: .35;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+.noticias{
+    background-color: $colorNoticias;
+        p {
+            @include fuente(none,sans-serif );
+            color: map-get($estilos, colores );
+            font-size: map-get($estilos , mediana );
+            padding-left: 6px;
+        }
+}
+.cuerpo{
+    background-color: $colorCuerpo;
+    p {
+        @include fuente(none,Times );
+        font-size: map-get($estilos, mediana );
+        color: map-get($estilos, noticias );
+    }
+}
+.pie{
+    background-color: $colorBarras;
+    p {
+        @include fuente(none,Georgia );
+        font-size: map-get($estilos , mediana );
+        color: map-get($estilos , colores );
+    }
+    .propiedad {
+        font-size: map-get($estilos , chica );
+    }
+}
+.logo{
+    animation: rotate 4s 
+            linear infinite;
+}
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.logo--lateral{
+    @extend .logo  
+}
